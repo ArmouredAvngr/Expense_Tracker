@@ -4,10 +4,9 @@ import csv
 home = os.path.expanduser("~")
 file_path = os.path.join(home, "Documents", "Expenses.csv")
 
-if not os.path.exists(file_path):
-    with open(file_path, mode="w", newline="") as file:
-        writer = csv.writer(file)
-        writer.writerow(["Category", "Expense", "Remaining Budget"])
+with open(file_path, mode="w", newline="") as file:
+    writer = csv.writer(file)
+    writer.writerow(["Category", "Expense", "Remaining Budget"])
 
 budget = float(input("Enter your budget: "))
 
