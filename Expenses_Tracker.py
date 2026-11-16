@@ -4,6 +4,7 @@ import csv
 home = os.path.expanduser("~")
 file_path = os.path.join(home, "Documents", "Expenses.csv")
 
+
 with open(file_path, mode="w", newline="") as file:
     writer = csv.writer(file)
     writer.writerow(["Category", "Expense", "Remaining Budget"])
@@ -26,7 +27,8 @@ while True:
     again = input("\nWould you like to log another expense? (y/n): ")
 
     if again != "y":
+        print("\nAll expenses saved to:", file_path)
         break
-
-    print("\nAll expenses saved to:", file_path)
+        
     input("Press Enter to continue...")
+
